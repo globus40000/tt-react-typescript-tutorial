@@ -1,10 +1,10 @@
 import React from "react";
 
-interface IButtonProps {
+type ButtonProps = {
   className: string;
-}
+};
 
-export const Button = (props: IButtonProps) => {
+export const Button = (props: ButtonProps) => {
   return <button className={props.className}></button>;
 };
 
