@@ -1,11 +1,11 @@
 import { ComponentProps } from "react";
 import { Equal, Expect } from "../helpers/type-utils";
 
-type InputProps = Omit<ComponentProps<"input">, "onChange"> & {
+interface IInputProps extends Omit<ComponentProps<"input">, "onChange"> {
   onChange: (value: string) => void;
-};
+}
 
-export const Input = (props: InputProps) => {
+export const Input = (props: IInputProps) => {
   return (
     <input
       {...props}
