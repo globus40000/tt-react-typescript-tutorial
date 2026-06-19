@@ -4,8 +4,8 @@ export const Component = () => {
   // Passing `null` tells React to manage the ref - readonly for us.
   // const ref = useRef<string>(null);
 
-  // Padding something (except `null`) or nothing tells React that
-  // we will manage the ref by themselves.
+  // Passing something (except `null`) or nothing tells React that
+  // we will manage the ref by ourselves.
   const ref = useRef<string>("");
 
   // Why is this not allowed?
