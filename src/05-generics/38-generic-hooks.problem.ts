@@ -9,10 +9,10 @@ import { Equal, Expect } from "../helpers/type-utils";
  * There are _many_ different solutions - but they all involve generics.
  */
 
-type UseStateAsObjectReturn<T> = {
+interface UseStateAsObjectReturn<T> {
   value: T;
   set: React.Dispatch<React.SetStateAction<T>>;
-};
+}
 
 export function useStateAsObject<T>(initial: T): UseStateAsObjectReturn<T> {
   const [value, set] = useState(initial);
