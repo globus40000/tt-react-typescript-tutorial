@@ -8,7 +8,10 @@ import { Equal, Expect } from "../helpers/type-utils";
  *
  * There are _many_ different solutions - but they all involve generics.
  */
-export function useStateAsObject<T>(initial: T) {
+export function useStateAsObject<T>(initial: T): {
+  value: T;
+  set: React.Dispatch<React.SetStateAction<T>>;
+} {
   const [value, set] = useState(initial);
 
   return {
