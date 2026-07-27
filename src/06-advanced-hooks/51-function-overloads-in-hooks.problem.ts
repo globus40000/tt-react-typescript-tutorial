@@ -7,7 +7,15 @@ import { Equal, Expect } from "../helpers/type-utils";
  *
  * If you pass a default value, it should NOT include undefined.
  */
-export function useStateAsObject<T>(initial: T) {
+export function useStateAsObject<T>(): {
+  value: T | undefined;
+  set: React.Dispatch<React.SetStateAction<T | undefined>>;
+};
+export function useStateAsObject<T>(initial: T): {
+  value: T;
+  set: React.Dispatch<React.SetStateAction<T>>;
+};
+export function useStateAsObject<T>(initial?: T) {
   const [value, set] = useState(initial);
 
   return {
