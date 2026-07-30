@@ -49,5 +49,5 @@ const Component3 = (): React.ReactElement => {
  * 4b. ...but this one does?
  */
 const Component4 = (): React.ReactElement => {
-  return "hello!";
+  return <>hello!</>;
 };
