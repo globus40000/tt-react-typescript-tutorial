@@ -17,7 +17,7 @@ import { ReactNode } from "react";
  */
 
 type OptionType = {
-  __brand: "OPTION_TYPE";
+  __brand?: "OPTION_TYPE";
 } & ReactNode;
 
 const Option = () => {
