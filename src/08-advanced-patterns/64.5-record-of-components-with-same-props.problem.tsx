@@ -1,6 +1,9 @@
+import { ComponentType } from "react";
 import { Equal, Expect } from "../helpers/type-utils";
 
 type InputProps = React.ComponentProps<"input">;
+
+type InputType = "text" | "number" | "password";
 
 /**
  * All these components take the same props!
@@ -12,7 +15,7 @@ type InputProps = React.ComponentProps<"input">;
  *
  * Hint: Record and satisfies will come in handy.
  */
-const COMPONENTS = {
+const COMPONENTS: Record<InputType, ComponentType<InputProps>> = {
   text: (props) => {
     return <input {...props} type="text" />;
   },
@@ -24,7 +27,7 @@ const COMPONENTS = {
   },
 };
 
-export const Input = (props: unknown) => {
+export const Input = (props: { type: InputType } & InputProps) => {
   const Component = COMPONENTS[props.type];
   return <Component {...props} />;
 };
